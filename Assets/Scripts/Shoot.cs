@@ -6,9 +6,17 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] private Bullet _prefab;
     [SerializeField] Transform _shootPoint;
+    [SerializeField] private float _velocity;
 
-    public void Shooting()
+    public void Shooting( Vector3 direction)
     {
-        Instantiate(_prefab, _shootPoint.position, Quaternion.identity, transform);
+        ProjectileShoot(_shootPoint.position, direction * _velocity);
+    }
+
+    private void ProjectileShoot(Vector3 startPoint, Vector3 velocity)
+    {
+        var projectile = Instantiate(_prefab);
+
+        projectile.Shoot(startPoint, velocity);
     }
 }

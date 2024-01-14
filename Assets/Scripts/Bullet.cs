@@ -6,20 +6,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _damage;
-    [SerializeField] private float _speed;
 
     private Rigidbody2D _rigidbody;
-    private Transform _shootPoint;
 
-    private void Start()
+    private void Awake()
     {
-        _shootPoint = GetComponentInParent<Transform>();
-    }
-
-    private void Update()
-    {
-       //transform.Translate(transform.parent.transform.right * _speed * Time.deltaTime, Space.World);
-        _rigidbody.AddForce(_shootPoint.transform.right * _speed, ForceMode2D.Force);
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,5 +22,11 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    public void Shoot(Vector3 startPoint, Vector3 speed)
+    {
+        _rigidbody.position = startPoint;
+        _rigidbody.velocity = speed;
     }
 }

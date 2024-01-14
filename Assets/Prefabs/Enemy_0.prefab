@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181220108410463478}
-  - component: {fileID: 4054366600244198137}
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -32,20 +31,6 @@ Transform:
   m_Father: {fileID: 63361691146141830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -190, z: 0}
---- !u!114 &4054366600244198137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427260265733349929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff38d335a06f86341b4166c54ccb3e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 8982886400951672437, guid: b51ad43ec24a5174c89608a3a272125d, type: 3}
-  _shootPoint: {fileID: 1181220108410463478}
 --- !u!1 &8646292235941874953
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +45,7 @@ GameObject:
   - component: {fileID: 905853000417734523}
   - component: {fileID: 7287391738551026750}
   - component: {fileID: -3403637244453522791}
+  - component: {fileID: 885824427196485064}
   m_Layer: 0
   m_Name: Enemy_0
   m_TagString: Untagged
@@ -164,7 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _delay: 1
+  _minTimeBetweenShoot: 2
+  _maxTimeBetweenShoot: 4
 --- !u!114 &7287391738551026750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,3 +178,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
+--- !u!114 &885824427196485064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646292235941874953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff38d335a06f86341b4166c54ccb3e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8982886400951672437, guid: b51ad43ec24a5174c89608a3a272125d, type: 3}
+  _shootPoint: {fileID: 1181220108410463478}
+  _velocity: 7

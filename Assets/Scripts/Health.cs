@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => _maxHealth;
 
-    public event UnityAction HealthChanged;
+    public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
 
     private void Awake()
@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
 
         _currentHealth = Mathf.Clamp(targetHealth, 0, _maxHealth);
 
-        HealthChanged?.Invoke();
+        HealthChanged?.Invoke(_currentHealth);
 
         if (_currentHealth <= 0)
             Died?.Invoke();
@@ -38,6 +38,6 @@ public class Health : MonoBehaviour
 
         _currentHealth = Mathf.Clamp(targetHealth, 0, _maxHealth);
 
-        HealthChanged?.Invoke();
+        HealthChanged?.Invoke(_currentHealth);
     }
 }

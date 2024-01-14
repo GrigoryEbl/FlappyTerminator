@@ -6,7 +6,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _damage;
-    [SerializeField] private float _delay;
+    [SerializeField] private float _minTimeBetweenShoot;
+    [SerializeField] private float _maxTimeBetweenShoot;
 
     private Spawner _spawner;
     private Health _health;
@@ -24,8 +25,8 @@ public class Enemy : MonoBehaviour
     {
         if (_lastAttackTime <= 0)
         {
-            _shoot.Shooting();
-            _lastAttackTime = _delay;
+            _shoot.Shooting(-transform.right);
+            _lastAttackTime = Random.Range(_minTimeBetweenShoot, _maxTimeBetweenShoot);
         }
 
         _lastAttackTime -= Time.deltaTime;

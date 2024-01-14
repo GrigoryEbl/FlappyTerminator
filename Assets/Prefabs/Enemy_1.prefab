@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4522839821930457557}
   - component: {fileID: 2169128788373653620}
   - component: {fileID: -3994631905847435531}
+  - component: {fileID: 278883883868728070}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -118,7 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _delay: 1
+  _minTimeBetweenShoot: 2
+  _maxTimeBetweenShoot: 4
 --- !u!114 &2169128788373653620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1
+--- !u!114 &278883883868728070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039004021273737600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff38d335a06f86341b4166c54ccb3e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8982886400951672437, guid: b51ad43ec24a5174c89608a3a272125d, type: 3}
+  _shootPoint: {fileID: 3967657413064473651}
+  _velocity: 7
 --- !u!1 &7452861434937534391
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +171,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3967657413064473651}
-  - component: {fileID: 1552717138450631836}
   m_Layer: 0
   m_Name: ShootPoint (1)
   m_TagString: Untagged
@@ -177,17 +193,3 @@ Transform:
   m_Father: {fileID: 4057151671952729876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -190, z: 0}
---- !u!114 &1552717138450631836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7452861434937534391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff38d335a06f86341b4166c54ccb3e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 8982886400951672437, guid: b51ad43ec24a5174c89608a3a272125d, type: 3}
-  _shootPoint: {fileID: 3967657413064473651}

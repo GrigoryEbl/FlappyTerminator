@@ -6,8 +6,15 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
+    private Transform _transform;
+
+    private void Awake()
+    {
+        _transform = transform;
+    }
+
     private void Update()
     {
-        transform.Translate(Vector3.left * _speed * Time.deltaTime);
+        _transform.Translate(Vector3.left * _speed * Time.deltaTime);
     }
 }
